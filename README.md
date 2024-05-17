@@ -94,6 +94,10 @@ The application should now be running on `http://localhost:3000`. Open this URL 
 2. The application will send a query to the OpenAI API, which will find a set of books related to what was searched.
 3. Browse through the recommendations and click on any book to view more info.
 
+## Preview
+
+![Previews](frontend/public/find-books-screen.png "Preview")
+
 ## Contributing
 
 We welcome contributions to improve the Book Recommender App! Please follow these steps to contribute:
