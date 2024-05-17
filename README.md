@@ -49,6 +49,32 @@ Before you begin, ensure you have the following installed:
    cd frontend && npm install
    ```
 
+## Preparing the Database
+
+This application will use an SQLite3 database to store a cache of embeddings data obtained from OpenAI. To populate the database, we will use a CSV file containing data on thousands of books sourced from Kaggle.com: [Amazon Books Reviews](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews).
+
+### Steps to Prepare the Database
+
+1. **Download the CSV File**
+
+   Download the dataset from Kaggle.com and unzip the `books_data.csv` file to the `backend/data` directory.
+
+2. **Convert data file to JSON**
+
+   Run the code below to create a JSON file:
+   ```bash
+   cd backend/data
+   node extract_from_csv.js
+   ```
+
+3. **Create and populate the database**
+
+   By running the following code, you create the database, its structure and populate it with AI _embeddings_.
+   ```bash
+   cd backend/data
+   node createEmbeddings.js
+   ```
+
 ### Running the Application
 
 1. Start the backend server:
@@ -64,8 +90,8 @@ The application should now be running on `http://localhost:3000`. Open this URL 
 
 ## Usage
 
-1. Enter a search query (prompt input) in the search bar.
-2. The app will send the query to the OpenAI API, which processes the input and returns a list of recommended books.
+1. Enter a search input (prompt) in the search bar.
+2. The application will send a query to the OpenAI API, which will find a set of books related to what was searched.
 3. Browse through the recommendations and click on any book to view more info.
 
 ## Contributing
@@ -89,7 +115,7 @@ We welcome contributions to improve the Book Recommender App! Please follow thes
 
 ## License
 
-This project is licensed under the GNU GPLv3. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the GNU GPLv3 license. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
