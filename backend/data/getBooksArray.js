@@ -8,7 +8,7 @@ const getBooksArray = () => {
     const dataArray = JSON.parse(jsonData);
     return dataArray;
   } catch (error) {
-    console.error('Error parsing JSON file:', err);
+    console.error('Error parsing JSON file:', error);
     return [];
   }
 }

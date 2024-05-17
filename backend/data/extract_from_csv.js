@@ -30,6 +30,6 @@ fs.createReadStream(booksFilePath)
     try {
       fs.writeFileSync(filePath, booksJSON, 'utf-8');
     } catch (error) {
-      console.error('Error writing JSON file:', err);
+      console.error('Error writing JSON file:', error);
     }
   })
